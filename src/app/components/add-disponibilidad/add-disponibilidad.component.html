@@ -1,0 +1,60 @@
+<div>
+
+<br/>
+    <form class="content" (submit)="registrarDisponibilidad()">
+        <div class="submit-form">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6>Registro de disponibilidad</h6>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 3%">
+                <div class="col-lg-4">
+                    <label for="horaInicio">Hora inicio</label>
+                    <input type="text" class="form-control" name="horaInicio" id="horaInicio" [(ngModel)] = "disponibilidad.horaInicio"/>
+                </div>
+
+                <div class="col-lg-4">
+                    <label for="horaFinal">Hora final</label>
+                    <input type="text" class="form-control" name="horaFinal" id="horaFinal" [(ngModel)] = "disponibilidad.horaFin"/>
+                </div>
+                <div class="col-lg-4">
+                    <label for="dia">Dia</label>
+                    <input type="text" class="form-control" id="dia" name="dia" [(ngModel)]="disponibilidad.dia"/>
+                </div>
+            </div>
+
+            <div class="row">
+                
+
+            </div>
+
+            <div class="row" style="margin-top: 3%">
+                <div class="col-lg-6">
+                    <label for="ciclo">Ciclo</label>
+                    <select id="ciclo" name="ciclo" class="form-control" [(ngModel)] = "disponibilidad.ciclo!.idCiclo">
+                        <option value="-1"> [Seleccione] </option>
+                        <option *ngFor="let c of lstCiclos" value="{{c.idCiclo}}"> {{c.nombre}} </option>
+                    </select>
+                </div>
+
+                <div class="col-lg-6">
+                    <label for="usuario">Usuario</label>
+                    <select id="usuario" name="usuario" class="form-control" [(ngModel)]="disponibilidad.usuario!.idUsuario">
+                        <option value="-1"> [Seleccione] </option>
+                        <option *ngFor="let u of lstUsuarios" value="{{u.idUsuario}}"> {{u.nombres}} </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 3%">
+                <div class="col-lg-12">
+                    <button class="btn btn-success">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
